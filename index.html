@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rocket Tycoon</title>
+</head>
+<body>
+    <div id="game">
+        <div id="rocket">
+            <img src="rocket1.png" width="60px" height="60px">
+        </div>
+        <div id="obstacle">
+            <img src="asteroid.png" width="40px" height="40px">
+        </div>
+    </div>
+    <div id="ground"></div>
+</body>
+<script src="rockettycoon.js"></script>
+<style type="text/css">
+    body {
+        margin: 0;
+        padding: 0;
+        background: #111;
+    }
+    #rocket,
+    #obstacle {
+    z-index: 1;
+    }
+    #game {
+        width: 400px;
+        height: 800px;
+        background: purple;
+        position: absolute;
+        left: 300px;
+        top: 100px;
+    }
+    #rocket {
+        width: 60px;
+        height: 60px;
+        position: relative;
+        top: 700px;
+        left: 170px;
+    }
+    .animate {
+        animation-fill-mode: forwards;
+    }
+    @keyframes left {
+        0% {
+            left: 170px;
+        }
+        100% {
+            left: 340px;
+        }
+    }
+    @keyframes right {
+        0% {
+            left: 340px;
+        }
+        100% {
+            left: 170px;
+        }
+    }
+    .obstacle {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: -50px;
+        animation-duration: 1.3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    #ground {
+        width: 400px;
+        height: 50px;
+        background: beige;
+        position: absolute;
+        top: 900px;
+        left: 300px;
+    }
+</style>
+</html>
