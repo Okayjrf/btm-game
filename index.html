@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Rocket Tycoon</title>
+    <title>Rocket Journey</title>
 </head>
 <body>
+    <div id="background"></div>
     <div id="game">
         <div id="rocket">
-            <img src="rocket1.png" width="60px" height="60px">
+            <img src="rocket3.png" width="50px" height="50px">
+        </div>
+        <div id="stars">
+            <img src="stars.png" width="30px" height="30px">
+        </div>
+        <div id="blueplanet">
+            <img src="blueplanet.png" width="30px" height="30px">
         </div>
         <div id="obstacle">
-            <img src="asteroid.png" width="40px" height="40px">
+            <img src="asteroids.png" width="30px" height="30px">
         </div>
     </div>
-    <div id="ground"></div>
 </body>
 <script src="rockettycoon.js"></script>
 <style type="text/css">
@@ -23,22 +29,36 @@
     }
     #rocket,
     #obstacle {
-    z-index: 1;
+        z-index: -1px;
+    }
+    #stars {
+        z-index: -1px;
+    }
+    #blueplanet{
+        z-index: -1px;
     }
     #game {
         width: 400px;
         height: 800px;
-        background: purple;
-        position: absolute;
-        left: 300px;
-        top: 100px;
+        margin: auto;
+        border:1px solid black;
+        left: 0;
+        top: 0;
+        background-image: url('vert.jpg') ;
     }
     #rocket {
-        width: 60px;
-        height: 60px;
+        width: 30px;
+        height: 30px;
         position: relative;
         top: 700px;
         left: 170px;
+    }
+    #background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url('space.jpg');
+        background-repeat: repeat-y;
     }
     .animate {
         animation-fill-mode: forwards;
@@ -60,21 +80,28 @@
         }
     }
     .obstacle {
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        top: -50px;
+        width: 30px;
+        height: 30px;
+        position: relative;
         animation-duration: 1.3s;
         animation-iteration-count: infinite;
         animation-timing-function: linear;
     }
-    #ground {
-        width: 400px;
-        height: 50px;
-        background: beige;
-        position: absolute;
-        top: 900px;
-        left: 300px;
+    .stars {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        animation-duration: 1.3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+    .blueplanet {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        animation-duration: 1.3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
     }
 </style>
 </html>
